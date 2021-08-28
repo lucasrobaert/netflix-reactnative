@@ -2,7 +2,6 @@ import React from 'react';
 import Home from '../screens/Home';
 import More from '../screens/More';
 import ToBeDone from '../screens/ToBeDone';
-import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
