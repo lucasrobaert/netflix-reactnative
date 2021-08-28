@@ -47,6 +47,7 @@ const Movies = ({label, item}) => {
       <Label>{label}</Label>
       <MovieScroll horizontal>
         {item.map((movie, index) => {
+          console.log(movie);
           return (
             <MovieCard key={String(index)}>
               <TouchableWithoutFeedback
@@ -61,7 +62,7 @@ const Movies = ({label, item}) => {
                     index === pressing.index ? {transform: [translate]} : null
                   }
                   resizeMode="cover"
-                  source={movie}
+                  source={{uri: movie.Poster}}
                 />
               </TouchableWithoutFeedback>
             </MovieCard>
