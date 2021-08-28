@@ -10,10 +10,13 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <Tab.Navigator
-      tabOptions={{
-        backgroundColor: 'black',
-        activeTintColor: 'white',
-        style: {backgroundColor: '#1a1718', borderTopColor: 'transparent'},
+      screenOptions={{
+        tabBarActiveTintColor: 'white',
+        tabBarStyle: {
+          backgroundColor: '#1a1718',
+          borderTopColor: 'transparent',
+        },
+        headerShown: false,
       }}>
       <Tab.Screen
         name="Home"
@@ -23,6 +26,7 @@ export default function App() {
           tabBarIcon: ({focused, color, size}) => (
             <Icon name="home" size={size} color={color} />
           ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
