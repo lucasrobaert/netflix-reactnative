@@ -5,10 +5,8 @@ import {View, Text} from 'react-native';
 
 const Home = () => {
   return (
-    <View>
-      <Text style={{alignItems: 'center', justifyContent: 'center'}}>
-        Screen Home
-      </Text>
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Screen Home</Text>
     </View>
   );
 };

@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, Text} from 'react-native';
 
 const ChooseIcon = () => {
-  return <View />;
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>ChooseIcon Screen</Text>
+    </View>
+  );
 };
-
-const styles = StyleSheet.create({});
 
 export default ChooseIcon;

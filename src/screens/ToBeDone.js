@@ -5,10 +5,8 @@ import {View, Text} from 'react-native';
 
 const ToBeDone = () => {
   return (
-    <View>
-      <Text style={{alignItems: 'center', justifyContent: 'center'}}>
-        Screen More
-      </Text>
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Screen More</Text>
     </View>
   );
 };

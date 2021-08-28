@@ -5,10 +5,8 @@ import {View, Text} from 'react-native';
 
 const Camera = () => {
   return (
-    <View>
-      <Text style={{alignItems: 'center', justifyContent: 'center'}}>
-        Screen Camera
-      </Text>
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Screen Camera</Text>
     </View>
   );
 };
