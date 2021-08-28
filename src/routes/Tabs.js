@@ -63,7 +63,7 @@ export default function App() {
         name="More"
         component={More}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: 'More',
           tabBarIcon: ({focused, color, size}) => (
             <Icon name="bars" size={size} color={color} />
           ),

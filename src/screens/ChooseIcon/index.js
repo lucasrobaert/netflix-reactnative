@@ -1,28 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import styled from 'styled-components/native';
-import {View} from 'react-native';
 import Avatar from '../../components/Avatar';
 
-const Screen = styled.View`
-  flex: 1;
-  background-color: #000;
-  padding: 10px;
-  align-content: center;
-`;
-
-const Row = styled.ScrollView`
-  height: 80px;
-`;
-
-const Label = styled.Text`
-  color: white;
-  padding: 10px;
-`;
-
-const Button = styled.Button`
-  margin: 10px;
-  background-color: white;
-`;
+import {Screen, Label, Row, Button, Container} from './styles';
 
 let iconsAvailables = [
   require('../../assets/avatars/avatar6.png'),
@@ -52,7 +32,7 @@ const ChooseIcon = props => {
   return (
     <Screen>
       <Label>Classic</Label>
-      <View style={{height: 80}}>
+      <Container>
         <Row horizontal>
           {iconsAvailables.map((item, index) => (
             <Avatar
@@ -68,10 +48,10 @@ const ChooseIcon = props => {
             />
           ))}
         </Row>
-      </View>
+      </Container>
       <Label>Create your avatar</Label>
       <Button
-        color="#1a1718"
+        color="#fff"
         title="CAMERA"
         onPress={() => {
           props.navigation.navigate('Camera', {

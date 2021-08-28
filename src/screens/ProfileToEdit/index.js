@@ -1,25 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
-import styled from 'styled-components/native';
 import Avatar from '../../components/Avatar';
 
-const Screen = styled.View`
-  flex: 1;
-  background-color: #000;
-  flex-direction: column;
-  padding: 10px;
-  justify-content: center;
-`;
-
-const GoBackButton = styled.Button`
-  background-color: black;
-  font-size: 16px;
-  font-weight: bold;
-`;
-
-const RowContainer = styled.View`
-  flex-direction: row;
-  justify-content: center;
-`;
+import {Screen, GoBackButton, RowContainer} from './styles';
 
 const twoBytwo = profiles => {
   const result = [];
@@ -49,7 +32,7 @@ const ProfileToEdit = props => {
         <GoBackButton
           onPress={() => props.navigation.goBack()}
           title="Concluído"
-          color="black"
+          color="#fff"
         />
       ),
     });

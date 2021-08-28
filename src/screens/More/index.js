@@ -1,41 +1,14 @@
 import React from 'react';
-import styled from 'styled-components/native';
+
 import Avatar from '../../components/Avatar';
-import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-const Screen = styled.View`
-  flex: 1;
-  background-color: #000;
-  flex-direction: column;
-  padding: 10px;
-  justify-content: center;
-`;
-
-const AvantarsContainer = styled.View`
-  height: 150px;
-`;
-
-const Row = styled.View`
-  flex: 1;
-  background-color: #000;
-  padding: 10px;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-`;
-
-const NetflixButton = styled.TouchableOpacity`
-  flex-direction: row;
-  margin: 10px;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ButtonLabel = styled.Text`
-  margin: 10px;
-  color: gray;
-`;
+import {
+  Row,
+  Screen,
+  AvantarsContainer,
+  NetflixButton,
+  ButtonLabel,
+} from './styles';
 
 let profilesAvailables = [
   {
