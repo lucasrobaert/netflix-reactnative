@@ -2,6 +2,9 @@ import React from 'react';
 
 import Avatar from '../../components/Avatar';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import ProfileContext from '../../context/ProfileContext';
+
 import {
   Row,
   Screen,
@@ -68,28 +71,37 @@ const More = props => {
   replaceAvatarsWithImage(props, profilesAvailables);
 
   return (
-    <Screen>
-      <AvantarsContainer>
-        <Row horizontal>
-          {profilesAvailables.map(item => {
-            return (
-              <Avatar
-                key={item.name}
-                image={item.icon}
-                uri={item.uri}
-                name={item.name}
-                onPress={item => selectProfile(props.navigation, item)}
-              />
-            );
-          })}
-        </Row>
-      </AvantarsContainer>
-      <NetflixButton
-        onPress={() => editProfile(props.navigation, profilesAvailables)}>
-        <Icon name="edit" size={24} color="gray" />
-        <ButtonLabel>Gerenciar perfis</ButtonLabel>
-      </NetflixButton>
-    </Screen>
+    <ProfileContext.Consumer>
+      {({user, changeUser}) => {
+        return (
+          <Screen>
+            <AvantarsContainer>
+              <Row horizontal>
+                {profilesAvailables.map(item => {
+                  return (
+                    <Avatar
+                      key={item.name}
+                      image={item.icon}
+                      uri={item.uri}
+                      name={item.name}
+                      onPress={() => {
+                        changeUser(item.name);
+                        selectProfile(props.navigation, item);
+                      }}
+                    />
+                  );
+                })}
+              </Row>
+            </AvantarsContainer>
+            <NetflixButton
+              onPress={() => editProfile(props.navigation, profilesAvailables)}>
+              <Icon name="edit" size={24} color="gray" />
+              <ButtonLabel>Gerenciar perfis</ButtonLabel>
+            </NetflixButton>
+          </Screen>
+        );
+      }}
+    </ProfileContext.Consumer>
   );
 };
 
