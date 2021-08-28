@@ -60,7 +60,7 @@ export default function App() {
         }}
       />
       <Tab.Screen
-        name="Mais"
+        name="More"
         component={More}
         options={{
           tabBarLabel: 'Home',
