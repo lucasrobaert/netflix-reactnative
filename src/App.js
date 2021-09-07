@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ProfileContext from './context/ProfileContext';
 import Routes from './routes';
-import {Alert} from 'react-native';
 
 import messaging from '@react-native-firebase/messaging';
 
@@ -22,14 +21,6 @@ const App = () => {
   useEffect(() => {
     requestUserPermission();
   });
-
-  useEffect(() => {
-    const unsubscribe = messaging().onMessage(async remoteMessage => {
-      Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
-    });
-
-    return unsubscribe;
-  }, []);
 
   return (
     <ProfileContext.Provider value={{user, changeUser}}>

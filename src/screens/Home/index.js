@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {StatusBar} from 'react-native';
 import {useSpring} from '@react-spring/native';
+import messaging from '@react-native-firebase/messaging';
 
 import ProfileContext from '../../context/ProfileContext';
 
@@ -11,10 +12,10 @@ import Movies from '../../components/Movies';
 
 import {Container, AnimatedPost} from './styles';
 
-const Home = () => {
+const Home = props => {
   const [movies, setMovies] = useState([]);
 
-  const props = useSpring({
+  const propsSpring = useSpring({
     to: {opacity: 1},
     from: {opacity: 0},
     config: {duration: 5000},
@@ -24,6 +25,21 @@ const Home = () => {
     const data = require('../../assets/Movies.json');
 
     setMovies(data);
+  }, []);
+
+  const openNotification = data => {
+    props.navigation.navigate('Notification', data);
+  };
+
+  useEffect(() => {
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      const data = remoteMessage.data;
+      console.log(data.route);
+
+      openNotification(remoteMessage);
+    });
+
+    return unsubscribe;
   }, []);
 
   return (
@@ -46,7 +62,7 @@ const Home = () => {
             />
             <Container>
               <AnimatedPost
-                style={props}
+                style={propsSpring}
                 source={require('../../assets/poster.jpg')}>
                 <Header />
                 <Hero />
