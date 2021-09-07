@@ -47,7 +47,6 @@ const Movies = ({label, item}) => {
       <Label>{label}</Label>
       <MovieScroll horizontal>
         {item.map((movie, index) => {
-          console.log(movie);
           return (
             <MovieCard key={String(index)}>
               <TouchableWithoutFeedback

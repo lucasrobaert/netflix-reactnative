@@ -33,9 +33,6 @@ const Home = props => {
 
   useEffect(() => {
     const unsubscribe = messaging().onMessage(async remoteMessage => {
-      const data = remoteMessage.data;
-      console.log(data.route);
-
       openNotification(remoteMessage);
     });
 
@@ -46,7 +43,6 @@ const Home = props => {
     <ProfileContext.Consumer>
       {({user, changeUser}) => {
         let moviesToResume = [];
-        console.log(user);
 
         if (user) {
           const data = require('../../assets/moviesToResume.json');

@@ -9,7 +9,6 @@ export default class Camera extends PureComponent {
     if (this.camera) {
       const options = {quality: 0.5, base64: true};
       const data = await this.camera.takePictureAsync(options);
-      // console.log(data.uri);
       this.props.navigation.navigate('More', {
         image: data.uri,
         name: this.props.route.params.name,
@@ -40,9 +39,7 @@ export default class Camera extends PureComponent {
             buttonPositive: 'Ok',
             buttonNegative: 'Cancel',
           }}
-          onGoogleVisionBarcodesDetected={({barcodes}) => {
-            // console.log(barcodes);
-          }}
+          onGoogleVisionBarcodesDetected={({barcodes}) => {}}
         />
         <View style={{flex: 0, flexDirection: 'row', justifyContent: 'center'}}>
           <TouchableOpacity

@@ -5,6 +5,8 @@ import ToBeDone from '../screens/ToBeDone';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+import {translate} from '../lang/util';
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -22,7 +24,7 @@ export default function App() {
         name="Home"
         component={Home}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: translate('home'),
           tabBarIcon: ({focused, color, size}) => (
             <Icon name="home" size={size} color={color} />
           ),
@@ -33,7 +35,7 @@ export default function App() {
         name="Search"
         component={ToBeDone}
         options={{
-          tabBarLabel: 'Search',
+          tabBarLabel: translate('search'),
           tabBarIcon: ({focused, color, size}) => (
             <Icon name="search" size={size} color={color} />
           ),
@@ -43,7 +45,7 @@ export default function App() {
         name="Soon"
         component={ToBeDone}
         options={{
-          tabBarLabel: 'Soon',
+          tabBarLabel: translate('soon'),
           tabBarIcon: ({focused, color, size}) => (
             <Icon name="photo-video" size={size} color={color} />
           ),
@@ -53,7 +55,7 @@ export default function App() {
         name="Downloads"
         component={ToBeDone}
         options={{
-          tabBarLabel: 'Downloads',
+          tabBarLabel: translate('download'),
           tabBarIcon: ({focused, color, size}) => (
             <Icon name="download" size={size} color={color} />
           ),
@@ -63,7 +65,7 @@ export default function App() {
         name="More"
         component={More}
         options={{
-          tabBarLabel: 'More',
+          tabBarLabel: translate('more'),
           tabBarIcon: ({focused, color, size}) => (
             <Icon name="bars" size={size} color={color} />
           ),

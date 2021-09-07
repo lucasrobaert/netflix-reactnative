@@ -87,7 +87,7 @@ const Hero = () => {
         </Button>
 
         <Play>
-          <Icon name="ios-play" size={26} />
+          <Icon name="play" size={26} />
           <TextButtonPlay>Assistir</TextButtonPlay>
         </Play>
 

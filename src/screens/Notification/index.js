@@ -19,7 +19,6 @@ const Notification = props => {
   }, []);
 
   const notification = props.route.params;
-  console.log(notification);
   return (
     <Wrapper>
       <Title>{notification.notification.title}</Title>
